@@ -1,0 +1,125 @@
+﻿@{
+    ViewBag.Title = "EDW Reports";
+}
+
+
+    <h5>Choose Report Type:</h5>
+    <div class=" card-deck text-center">
+
+        <a class="btn btn-outline-primary card mb-4 shadow-sm collapsed myCollapsible" data-toggle="collapse" href"#collapseExample" role="button" aria-expanded="false" id="perfrep">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Performance Reporting</h4>
+            </div>
+        </a>
+        <a class="btn btn-outline-primary card mb-4 shadow-sm collapsed myCollapsible" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" id="edwrep">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">EDW Entry Reporting</h4>
+            </div>
+        </a>
+    </div>
+    <div class="collapse" id="collapseExample">
+        <h5>Choose Report Attributes:</h5>
+        <div class=" card-deck text-center">
+
+            <div class="card card-body" style="display: inline;">
+                <div class="btn-group mx-auto">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Constituency
+                    </button>
+
+                    <div class="dropdown-menu">
+                        <div class=" dropdown-item input-group mb-3">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <input type="checkbox" aria-label="Checkbox for following text input" name="checkbox1" id="checkbox1">
+                                </div>
+                            </div>
+                            <label class="form-control" for="checkbox1">St. Andrew</label>
+                        </div>
+
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </div>
+
+                <div class="btn-group  mx-auto">
+                    <button type="button" class="btn btn-danger dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Application Type
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </div>
+
+                <div class="btn-group  mx-auto">
+                    <button type="button" class="btn btn-danger dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Worker Type
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </div>
+
+                <div class="btn-group  mx-auto">
+                    <button type="button" class="btn btn-danger dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Status
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </div>
+
+                <div class="dropdown-divider"></div>
+
+                <div class="input-group">
+                    <p>Specify Date:</p>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <input type="checkbox" aria-label="Checkbox for following text input">
+                            </div>
+                        </div>
+                        <input disabled type="date" class="form-control" aria-label="Text input with checkbox">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div>
+        <!--
+        <form id="form1" runat="server">
+            <div>
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt">
+                    <LocalReport ReportPath="report1.rdlc">
+                    </LocalReport>
+                </rsweb:ReportViewer>
+
+            </div>
+        </form>
+            -->
+    </div>
+@section scripts{
+    <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+    <script src="~/signalr/js"></script>
+    <script src="~/Scripts/SignalR.js"> 
+    </script>
+}
