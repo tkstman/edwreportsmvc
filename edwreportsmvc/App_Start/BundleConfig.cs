@@ -21,21 +21,22 @@ namespace edwreportsmvc
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                 "~/Scripts/jquery.min.js"
-                ,"~/Scripts/jquery-3.3.1.slim.min.js"
-                ,"~/Scripts/popper.min.js"
-                ,"~/Scripts/bootstrap.js"
-                ,"~/Scripts/bootstrap.min.js"
+                //,"~/Scripts/jquery-3.3.1.slim.min.js"
+                //,"~/Scripts/popper.min.js"
+                //,"~/Scripts/bootstrap.js"
+                //,"~/Scripts/bootstrap.min.js"
                 ,"~/Scripts/bootstrap.bundle.js"
-                ,"~/Scripts/bootstrap.bundle.min.js"
+                //,"~/Scripts/bootstrap.bundle.min.js"
                 ,"~/Scripts/holder.min.js"
                 ,"~/Scripts/main.js",
                 "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/css/bootstrap.min.css",
                 "~/Content/css/pricing.css",
-                "~/Content/css/bootstrap.css",
-                "~/Content/css/bootstrap-reboot.min.css",
-                "~/Content/css/bootstrap-reboot.css"));
+                //"~/Content/css/bootstrap.css",
+                "~/Content/css/bootstrap-reboot.min.css"//,
+                //"~/Content/css/bootstrap-reboot.css"
+                ));
         }
     }
 }

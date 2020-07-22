@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using edwreportsmvc.Models;
+//using edwreportsmvc.Models;
 
 namespace edwreportsmvc
 {
@@ -32,6 +32,7 @@ namespace edwreportsmvc
         }
     }
 
+    /*
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
@@ -106,4 +107,6 @@ namespace edwreportsmvc
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
         }
     }
+
+    */
 }
