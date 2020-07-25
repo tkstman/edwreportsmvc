@@ -33,7 +33,7 @@ namespace edwreportsmvc
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/css/bootstrap.min.css",
                 "~/Content/css/pricing.css",
-                //"~/Content/css/bootstrap.css",
+                "~/Content/css/main.css",
                 "~/Content/css/bootstrap-reboot.min.css"//,
                 //"~/Content/css/bootstrap-reboot.css"
                 ));
