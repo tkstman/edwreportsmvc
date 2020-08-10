@@ -51,7 +51,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -341,7 +340,7 @@
         <DataSetName>DataSetEDWReporting</DataSetName>
         <Top>0.03528cm</Top>
         <Height>1.8cm</Height>
-        <Width>16.51cm</Width>
+        <Width>16.50999cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -466,7 +465,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Globals!OverallPageNumber</Value>
+                  <Value>="Page: " + Globals!PageNumber.ToString()</Value>
                   <Style />
                 </TextRun>
               </TextRuns>

@@ -31,12 +31,14 @@ namespace edwreportsmvc
                 ,"~/Scripts/main.js",
                 "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/css/bootstrap.min.css",
+            bundles.Add(new StyleBundle("~/Content/styles").Include("~/Content/css/bootstrap.min.css",
                 "~/Content/css/pricing.css",
                 "~/Content/css/main.css",
                 "~/Content/css/bootstrap-reboot.min.css"//,
                 //"~/Content/css/bootstrap-reboot.css"
                 ));
+
+            BundleTable.EnableOptimizations = true;
         }
     }
 }

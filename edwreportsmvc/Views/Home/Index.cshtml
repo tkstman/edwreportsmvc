@@ -6,18 +6,18 @@
     <h5>Choose Report Type:</h5>
     <div class="card-deck text-center">
 
-        <a class="btn btn-outline-primary card mb-4 shadow-sm collapsed myCollapsible" data-toggle="collapse" href"#collapseExample" role="button" aria-expanded="false" id="perfrep">
+        <a class="btn btn-outline-primary card mb-4 shadow-sm collapsed myCollapsible perfbtn" data-toggle="collapse" href="" role="button" aria-expanded="false" id="perfrep">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Performance Reporting</h4>
+                <h4 class="my-0 font-weight-normal">Productivity Report</h4>
             </div>
         </a>
-        <a class="btn btn-outline-primary card mb-4 shadow-sm collapsed myCollapsible" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" id="edwrep">
+        <a class="btn btn-outline-primary card mb-4 shadow-sm collapsed myCollapsible edwrepbtn" data-toggle="collapse" href="" role="button" aria-expanded="false" id="edwrep">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">EDW Entry Reporting</h4>
+                <h4 class="my-0 font-weight-normal">EDW Entry Report</h4>
             </div>
         </a>
     </div>
-    <div class="collapse" id="collapseExample">
+    <div class="collapse edwrepbtn" id="collapseExample">
         <h5>Choose Report Attributes:</h5>
         <div class="card-deck text-center">
 
@@ -59,42 +59,89 @@
                 </div>
 
                 <div class="dropdown-divider"></div>
-
-                <div class="input-group">
-                    <p>Specify Date:</p>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <input type="checkbox" aria-label="Checkbox for following text input">
+                <form id="entrydateform">
+                    <div class="input-group date_input">
+                        <h6>Specify Date:(Optional)</h6>
+                        <div class="input-group mb-3 form-row">
+                            <div class="form-group col text-left">
+                                <label name="startdate" aria-label="Checkbox for following text input">Start Date:</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input id="entryspecifystartdate" type="checkbox" class="" />
+                                        </div>
+                                    </div>
+                                    <input disabled type="date" id="entrystartdate" required pattern="\d{4}-\d{2}-\d{2}" class="form-control" aria-label="Text input with checkbox">
+                                </div>
                             </div>
+                            <div class="form-group col text-left">
+                                <label name="enddate" aria-label="Checkbox for following text input">End Date:</label>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input id="entryspecifyenddate" type="checkbox" class=""  />
+                                        </div>
+                                    </div>
+                                    <input disabled type="date" id="entryenddate" required pattern="\d{4}-\d{2}-\d{2}" class="form-control" aria-label="Text input with checkbox">
+                                 </div>       
+                             </div>
                         </div>
-                        <input disabled type="date" class="form-control" aria-label="Text input with checkbox">
                     </div>
-                </div>
+                </form>
 
             </div>
 
         </div>
     </div>
 
-    <div>
-        <!--
-        <form id="form1" runat="server">
-            <div>
-                <asp:ScriptManager ID="ScriptManager1" runat="server">
-                </asp:ScriptManager>
-                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt">
-                    <LocalReport ReportPath="report1.rdlc">
-                    </LocalReport>
-                </rsweb:ReportViewer>
 
-            </div>
-        </form>
-            -->
+<!--Performance Report Collapsible-->
+
+<div  id="collapseExamplePerf" class="collapse perf">
+    <h5>Choose Report Attributes:</h5>
+    <div class="card-deck text-center">
+
+        <div class="card card-body" style="display: inline;" id="droppy2">
+            <form id="perfdateform">
+                <div class="input-group date_input">
+                    <h6>Specify Date:</h6>
+                    <div class="input-group mb-3 form-row">
+                        <div class="form-group col text-left">
+                            <label name="perfstartdate" aria-label="Checkbox for following text input">Start Date:</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input id="perfspecifystartdate" type="checkbox" class="" />
+                                    </div>
+                                </div>
+                                <input disabled type="date" id="perfstartdate" required pattern="\d{4}-\d{2}-\d{2}" class="form-control" aria-label="Text input with checkbox">
+                            </div>
+                        </div>
+                        <div class="form-group col text-left">
+                            <label name="perfenddate" aria-label="Checkbox for following text input">End Date:</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input id="perfspecifyenddate" type="checkbox" class="" />
+                                    </div>
+                                </div>
+                                <input disabled type="date" id="perfenddate" required pattern="\d{4}-\d{2}-\d{2}" class="form-control" aria-label="Text input with checkbox">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+    <div>
+       <iframe id="ifrmReportViewer" src="" style="height:550px; width:100%;" frameborder="0" scrolling="no" ></iframe>
     </div>
 @section scripts{
-    <!--<script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
-    <script src="~/signalr/js"></script>
-    <script src="~/Scripts/SignalR.js">
-    </script>-->
+
 }

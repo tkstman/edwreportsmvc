@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ELECTIONWATCH_HELPER" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=eojmw\sqlmw;Initial Catalog=ELECTIONWATCH_HELPER;User ID=eojappuser" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ELECTIONWATCH_HELPERConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.VIEW_EDW_SRCH" Member="VIEW_EDW_SRCHes">
+    <Type Name="VIEW_EDW_SRCH">
+      <Column Name="WORKER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TRN" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="WORKER_TYPE" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="APP_TYPE" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS_CD" Type="System.String" DbType="NVarChar(27)" CanBeNull="true" />
+      <Column Name="TITLE" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="LAST_NM" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FRST_NM" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MID_NM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="C_PHONE1" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="C_PHONE2" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="[FULL ADDRESS]" Member="FULL_ADDRESS" Type="System.String" DbType="NVarChar(575)" CanBeNull="true" />
+      <Column Name="[FULL NAME]" Member="FULL_NAME" Type="System.String" DbType="NVarChar(252) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UNI_APP" Member="UNI_APPs">
+    <Type Name="UNI_APP">
+      <Column Name="app_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="app_nm" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="app_cd" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="rank" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="app_desc" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="photo_path" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="app_url" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SP_EDW_INFO" Method="SP_EDW_INFO" IsComposable="true">
+    <Parameter Name="trn" Type="System.String" DbType="NVarChar(20)" />
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.sp_electionwatch_helper_login" Method="sp_electionwatch_helper_login">
+    <Parameter Name="usr_nm" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="psswrd" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="sp_electionwatch_helper_loginResult">
+      <Column Name="usr_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usr_nm" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="frst_nm" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="last_nm" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="wloc_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="wloc_nm" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="app_nm" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="app_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="elctn_nm" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="elctn_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="last_login_dt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_GET_LOCATIONS" Method="SP_GET_LOCATIONS">
+    <Parameter Name="usr_nm" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="app" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_GET_LOCATIONSResult">
+      <Column Name="wloc_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="wloc_nm" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cnstncy_nbr" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cnstncy_nm" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="region_nbr" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="zone_nm" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
